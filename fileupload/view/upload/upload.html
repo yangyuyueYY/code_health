@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="M_Adnan">
+    <title>开源组件健康扫描</title>
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="__STATIC__/rs-plugin/rs-plugin/css/settings.css" media="screen"/>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__STATIC__/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="__STATIC__/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/css/ionicons.min.css" rel="stylesheet">
+    <link href="__STATIC__/css/main.css" rel="stylesheet">
+    <link href="__STATIC__/css/style.css" rel="stylesheet">
+    <link href="__STATIC__/css/responsive.css" rel="stylesheet">
+    <!--
+        <link rel="stylesheet" href="css/style_uploading.css">
+    -->
+    <!--添加的tree-->
+    <!--  <link href="./css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="__STATIC__/css/bootstrap-treeview.min.css" rel="stylesheet">
+
+    <!-- COLORS -->
+    <link rel="stylesheet" id="color" href="__STATIC__/css/default.css">
+
+    <!-- JavaScripts -->
+
+    <!--[endif]-->
+
+</head>
+<body>
+
+<!-- Wrap -->
+<div id="wrap">
+
+    <!-- header -->
+    <header class="header-normal">
+        <div class="sticky">
+            <div class="container">
+                <!-- Logo -->
+                <div class="logo"><a href="#."><img class="img-responsive" src="__STATIC__/images/logo.png" alt=""></a></div>
+
+                <!-- Navigation -->
+                <nav class="navbar webimenu">
+                    <!-- MENU BUTTON RESPONSIVE -->
+                    <div class="menu-toggle"><i class="fa fa-bars"> </i></div>
+                    <!-- NAV -->
+                    <ul class="nav ownmenu">
+                        <li><a href="index.html">首页</a>
+                        </li>
+                        <li><a href="about.html">服务</a></li>
+                        <li><a href="index.html">关于</a>
+                        </li>
+                        <li class="active"><a href="contact.html">联系</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!--======= HOME MAIN SLIDER =========-->
+    <section class="sub-bnr" data-stellar-background-ratio="0.5">
+        <div class="position-center-center">
+            <div class="container">
+                <input id="lefile" type="file" style="display:none" accept="text/xml,application/xml">
+                <div class="input-append">
+                    <input id="photoCover" class="input-large" type="text">
+                    <a class="btn-input" onclick="$('input[id=lefile]').click();">选择文件</a>
+                    <a class="btn-input" id="btn_submit" onClick="uploadFile();">上传文件</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--进度条-->
+    <div class="progress progress-striped active dis_none" id="process">
+        <div class="progress-bar progress-bar-success" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+               id="processBar">
+            <!--<span class="sr-only">40% 完成</span>-->
+        </div>
+    </div>
+
+    <!-- 内容-->
+    <div id="content" class="dis_none" >
+
+        <!-- 健康报告 -->
+        <section class="contact-page padding-top-100">
+            <div class="container">
+
+                <div class="heading text-center">
+                    <h4>健康报告</h4>
+                    <!--<span>Creative Design</span>-->
+                    <hr>
+                </div>
+
+                <!-- COnatct Info -->
+                <div class="contact-info margin-bottom-70">
+
+                    <ul class="row media-center">
+                        <!-- Email -->
+                        <li class="col-md-4">
+                            <div class="icon"><i class="fa fa-folder"></i></div>
+                            <div class="media-body">
+                                <h6 id="dpc_cnt">103</h6>
+                                <p>共搜索组件个数</p>
+                            </div>
+                        </li>
+
+                        <!-- Address -->
+                        <li class="col-md-4">
+                            <div class="icon"><i class="fa fa-warning"></i></div>
+                            <div class="media-body">
+                                <h6>10</h6>
+                                <p>共包含漏洞数</p>
+                            </div>
+                        </li>
+
+                        <!-- Phone -->
+                        <li class="col-md-4">
+                            <div class="icon"><i class="fa fa-exchange"></i></div>
+                            <div class="media-body">
+                                <h6>18</h6>
+                                <p>可优化组件数</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--添加的tree-->
+
+            <div class="container margin-bottom-70">
+                <div id="treeview"></div>
+            </div>
+            <!--tree-->
+
+            <div class=" intro-pur">
+                <div class="container">
+                    <div class="row media-center">
+                        <div class="col-md-9">
+                            <h3>如 果 有 相 关 问 题，请 联 系 laoshishuodedoudui@pku.edu.cn</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#." class="btn">联系我们</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!--======= FOOTER =========-->
+    <footer>
+        <div class="container">
+
+            <!-- FOOTER -->
+            <div class="footer-info">
+                <div class="row">
+
+                    <!-- keep in touch -->
+                    <div class="col-md-4">
+                        <div class="padding-right-50"><img src="__STATIC__/images/logo.png" class="margin-bottom-30" alt="">
+                            <p>
+                                我们提供开源组件健康扫描服务。帮助查看热度，并推荐组件。我们提供开源组件健康扫描服务。帮助查看热度，并推荐组件。我们提供开源组件健康扫描服务。帮助查看热度，并推荐组件。我们提供开源组件健康扫描服务。</p>
+                        </div>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-md-2">
+                        <h6>联系</h6>
+                        <ul class="links">
+                            <li><a href="#.">首页 </a></li>
+                            <li><a href="#.">服务</a></li>
+                            <li><a href="#.">我们的团队 </a></li>
+                            <li><a href="#.">隐私与权限 </a></li>
+                            <li><a href="#.">帮助中心</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- INSTAGRAM  -->
+                    <!--          <div class="col-md-3">
+                                <h6>iNSTAGRAM with us</h6>
+                                <div class="flicker-img">
+                                  <ul>
+                                    <li><a href="#."><img src="images/flicker-img-1.jpg" alt="" > </a></li>
+                                    <li><a href="#."><img src="images/flicker-img-2.jpg" alt="" > </a></li>
+                                    <li><a href="#."><img src="images/flicker-img-3.jpg" alt="" > </a></li>
+                                    <li><a href="#."><img src="images/flicker-img-4.jpg" alt="" > </a></li>
+                                    <li><a href="#."><img src="images/flicker-img-5.jpg" alt="" > </a></li>
+                                    <li><a href="#."><img src="images/flicker-img-6.jpg" alt="" > </a></li>
+                                  </ul>
+                                </div>
+                              </div>-->
+
+                    <!-- keep in touch -->
+                    <div class="col-md-3">
+                        <h6>订阅</h6>
+                        <div class="news-letter">
+                            <p>关注我们的服务请在下方输入邮箱，我们会发送相关消息：</p>
+                            <form class="subscribe">
+                                <input type="email" placeholder="Email address">
+                                <button type="submit"><i class="fa fa-envelope"></i></button>
+                            </form>
+
+                            <!-- Social Icons -->
+                            <div class="social_icons"><a href="#."><i class="fa fa-behance"></i></a> <a href="#."><i
+                                    class="fa fa-facebook"></i></a> <a href="#."><i class="fa fa-twitter"></i></a> <a
+                                    href="#."><i class="fa fa-dribbble"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- JavaScripts -->
+
+<!--tree-->
+<script src="__STATIC__/js/jquery.min.js"></script>
+<!--<script src="js/jquery.js"></script>-->
+
+<!--添加的tree-->
+<script src="__STATIC__/js/bootstrap-treeview.min.js"></script>
+<!--<script src="js/bootstrap-treeview.js"></script>-->
+
+
+<script src="__STATIC__/js/modernizr.js"></script>
+
+<!--<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,100' rel='stylesheet' type='text/css'>--->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>-->
+<!--
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+-->
+
+<script src="__STATIC__/js/bootstrap.min.js"></script>
+<script src="__STATIC__/js/own-menu.js"></script>
+<script src="__STATIC__/js/jquery.lighter.js"></script>
+<script src="__STATIC__/js/owl.carousel.min.js"></script>
+<script src="__STATIC__/js/color-switcher.js"></script>
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="__STATIC__/rs-plugin/rs-plugin/js/jquery.tp.t.min.js"></script>
+<script type="text/javascript" src="__STATIC__/rs-plugin/rs-plugin/js/jquery.tp.min.js"></script>
+<script src="__STATIC__/js/main.js"></script>
+<script type="text/javascript">
+    function uploadFile(){
+        var formData = new FormData();
+        var file_name = $('#lefile').val();
+        //上传文件
+        if(file_name === ""){
+            alert("请选择文件！");
+        }
+        else if(file_name.split('.')[1] === "xml"){
+            formData.append("maven", $('#lefile')[0].files[0]);
+            $("#process").removeClass("dis_none");
+            $.ajax({
+                url: "{:url('Upload/upload_file')}",
+                type: "POST",
+                data: formData,
+                async:true,  //这里要设置异步上传，才能成功调用myXhr.upload.addEventListener('progress',function(e){}),progress的回掉函数
+                contentType: false,
+                processData: false,
+                xhr:function(){
+                    myXhr = $.ajaxSettings.xhr();
+                    if(myXhr.upload){ // check if upload property exists
+                        myXhr.upload.addEventListener('progress',function(e){
+                            var loaded = e.loaded;                  //已经上传大小情况
+                            var total = e.total;                      //附件总大小
+                            var percent = Math.floor(100*loaded/total)+"%";     //已经上传的百分比
+                            //console.log("已经上传了："+percent);
+                            $("#processBar").css("width",percent);
+                        }, false); // for handling the progress of the upload
+                    }
+                    return myXhr;
+                },
+                success: function (data) {
+                    if(data.code ===1){
+
+                        $('#process').addClass("dis_none");
+                        var treeData = JSON.parse(data.data);
+
+                        //console.log(treeData);
+                        setTreeData(treeData.info);
+                        $('#dpc_cnt').html(treeData.count);
+                        $('#content').removeClass("dis_none");
+
+                    }
+                },
+                error: function () {
+                }
+            });
+        }
+        else{
+            alert("请输入正确的文件！");
+            window.location.reload();
+        }
+
+
+    }
+
+    function setTreeData(data){
+        $('#treeview').treeview({
+            levels: 1,
+            showImage: true,
+            borderColor: "#ffffff",
+            color: "#666666",
+            showTags: true,
+            data: data
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    $('input[id=lefile]').change(function () {
+        $('#photoCover').val($(this).val());
+    });
+</script>
+</body>
+</html>
