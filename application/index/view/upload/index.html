@@ -1,0 +1,261 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>开源组件健康扫描</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="开源组件，健康扫描" />
+<!-- bootstrap-css -->
+<link href="/static/assets2/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link href="/static/assets2/css/style.css" rel="stylesheet"  type="text/css" media="all" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link href="/static/assets2/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<script src="/static/assets2/js/jquery-2.2.3.min.js"></script>
+<script src="/static/assets2/js/bootstrap.js"></script>
+<style>
+	.w3-agile-grid a{
+		color: #b5b5b5;
+	}
+	.w3-agile-grid a:hover{
+		color: #FF5722;
+	}
+</style>
+</head>
+<body>
+	<!-- w3-banner -->
+	<div class="w3-banner jarallax">
+		<div class="wthree-different-dot">
+			<div class="w3layouts-header-top">
+				<div class="container">
+					<div class="w3-header-top-grids">
+						<div class="w3-header-top-left">
+							<p><i class="fa fa-wrench"></i>&nbsp;&nbsp;&nbsp;&nbsp;Maven工程开源组件健康扫描</p>
+						</div>
+						<div class="w3-header-top-right">
+							<div class="agileinfo-social-grids">
+								<ul>
+									<li><a href="#"><i class="fa fa-github"></i></a></li>
+								</ul>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="head">
+				<div class="container">
+					<div class="navbar-top">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+							  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							  </button>
+								 <div class="navbar-brand logo ">
+									<h1><a href="{:url('index/index/index')}">MOHS</a></h1>
+								</div>
+
+							</div>
+
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							 <ul class="nav navbar-nav link-effect-4">
+								<li><a href="{:url('index/index/index')}">主页</a></li>
+								<li class="active first-list"><a href="{:url('index/upload/index')}">工程上传</a></li>
+								<li><a href="#">登录</a></li>   
+								<li><a href="#">免费注册</a></li>
+								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-letters="Pages">产品与文档</span><span class="caret"></span></a>
+									<ul class="dropdown-menu"> 
+										<li><a href="#">产品下载</a></li>
+										<li><a href="#">帮助文档</a></li>
+									</ul>
+								</li>
+								<li><a href="#">关于我们</a></li>																
+							  </ul>
+							</div><!-- /.navbar-collapse -->
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //w3-banner -->
+
+	<!-- upload-file -->
+	<div class="contact agileits">
+		<div class="container">
+			<h2 class="agileits-title">Maven工程上传</h2>
+			<div class="contact-agileinfo">
+				<div class="col-md-7 contact-form wthree">
+					<form action="{:url('upload/uoploadfile')}" method="post" enctype='multipart/form-data'>
+						<input type="text" placeholder="工程名称" required=""/>
+						<a class="input-file input-fileup" href="javascript:;">
+						 + 上传工程文件<input type="file" name="file" id="file" required="">
+			            </a> 
+				        <div id="fileerrorTip"></div>
+				        <div id="showFileName"></div>            			
+						<textarea placeholder="工程内容简述" name="Message" required=""></textarea>
+						<br/><br/>
+						选择扫描选项：
+						<select name="scanoption" required="">
+							<option value="0">组件依赖扫描</option>
+							<option value="1">漏洞扫描</option>
+							<option value="2">License扫描</option>
+							<option value="3">热度扫描</option>
+						</select>
+						<br/>
+						<input type="submit" value="开始扫描">
+					</form>
+				</div>
+				<div class="col-md-4 contact-right wthree">
+					<div class="contact-text w3-agileits">
+						<h4>注意事项 :</h4>
+						<p><i class="fa  fa-folder-open-o"></i> 支持jar、war包及pom.xml文件 </p>
+						<p><i class="fa fa-compress"></i> 文件大小不能超过50M</p>
+						<p><i class="fa fa-exclamation-circle"></i> 每次只能上传一个Maven工程</p>
+						<p><i class="fa fa-clock-o"></i> 扫描时间根据您的工程大小而定，请您耐心等待</a></p> 
+					</div> 
+				</div> 
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+	</div>
+	<!-- //upload-file -->	
+
+	<!-- modal for footer -->
+	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header"> 
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>				<span class="badge badge-success text">公告</span>	
+						<h5 class="modal-title">[2019年4月8日] 产品说明</h5>
+					</div> 
+					<div class="modal-body">
+					<div class="agileits-w3layouts-info">
+						<p>亲爱的用户：<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你们好！我们的开源组件健康扫描工具目前只支持Maven工程。我们产品有web站点上传工程扫描、Eclipse插件两种形式。我们的团队正在不断努力，争取早日开发出可扫描多种类型工程的开源组件健康扫描工具。我们也在尝试推出更多形式的新产品，例如作为多种IDE开发环境的插件等，以满足不同用户的需求。一有新功能、新产品上线，我们会立即通过邮件提醒您使用并评测给出相关建议，敬请期待！
+							<p class="w3-header-top-right">
+								---北京大学软件与微电子学院张老师粉丝团
+							</p>							
+						</p>					
+						<br/><br/>				
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //modal for footer -->	
+
+	<!-- footer -->
+		<div class="agileits-w3layouts-footer">
+			<div class="container">
+				<div class="col-md-4 w3-agile-grid">
+					<h5>关于我们</h5>
+					<p>
+						团队：北京大学软件与微电子学院张老师粉丝团
+					</p>
+					<p>
+						成员：黄捷 王毅 徐辉 闫雅铭 孙佳静
+					</p>
+					<p>
+						我们是一支专注、努力、认真，不断学习的团队，立志做出中国最好用的开源组件健康扫描工具。
+					</p>
+					<div class="footer-agileinfo-social">
+						<ul>
+							<li><a href="#"><i class="fa fa-github"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-1 w3-agile-grid"></div>
+				<div class="col-md-3 w3-agile-grid">
+					<h5>帮助与支持</h5>
+					<p><a href="#" data-toggle="modal" data-target="#myModal">最新公告</a></p>
+					<p><a href="#" >产品下载</a></p>
+					<p><a href="#" >帮助文档</a></p>
+					<br/><br/>
+				</div>
+				<div class="col-md-4 w3-agile-grid">
+					<h5>联系我们</h5>
+					<div class="w3-address">
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>电 话</h6>
+								<p>+1 527 312 8901</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>邮 箱</h6>
+								<p><a href="mailto:example@email.com"> fansofzhang@pku.edu.cn</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="w3-address-grid">
+							<div class="w3-address-left">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+							</div>
+							<div class="w3-address-right">
+								<h6>地 址</h6>
+								<p>北京市大兴工业开发区金苑路24号北京大学软件与微电子学院
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<p>Copyright &copy; 2019.北京大学软件与微电子学院张老师粉丝团.
+					友情链接 <a href="http://www.ss.pku.edu.cn/" target="_blank" title="北京大学软件与微电子学院">北京大学软件与微电子学院</a> 
+				</p>
+			</div>
+		</div>
+	<!-- //footer -->
+
+	<!-- jsforuploadfile -->
+	<script type="text/javascript">
+		$(function(){
+			$(".input-fileup").on("change","input[type='file']",function(){
+				var filePath=$(this).val();
+				var file = $(this).get(0).files[0];
+				console.log(file.size);
+				if(filePath.indexOf("war")!=-1 || filePath.indexOf("jar")!=-1){
+				    if(file.size > 30*1024*1024){
+                        $("#showFileName").html("");
+                        $("#fileerrorTip").html("&nbsp;&nbsp;&nbsp;您上传的文件大小超过限制！").show();
+                        return false;
+					}
+					$("#fileerrorTip").html("").hide();
+					var arr=filePath.split('\\');
+					var fileName=arr[arr.length-1];
+					$("#showFileName").html("&nbsp;&nbsp;&nbsp;已选择文件："+fileName);
+				}
+				else{
+					$("#showFileName").html("");
+					$("#fileerrorTip").html("&nbsp;&nbsp;&nbsp;您未上传文件，或者您上传文件类型有误！").show();
+					return false
+				}
+			})
+		})
+	</script>
+	<!-- //jsforuploadfile -->
+
+</body>	
+</html>

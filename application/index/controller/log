@@ -1,0 +1,10 @@
+***** start
+***** 当前目录：/home/wwwroot/mavenproject/public
+***** 默认压缩包地址目录：uploads/20190417
+***** 项目所在的目录：
+***** 需要解压的文件：uploads/20190417/20190417221940_test.jar
+***** 解压后的地址：/home/wwwroot/mavenproject/public/uploads/20190417/udir/20190417221940_test
+***** pom文件所在目录：/home/wwwroot/mavenproject/public/uploads/20190417/udir/20190417221940_test/META-INF/maven/demo.mr/join-brand-age/pom.xml
+***** pom文件所在根目录：uploads/20190417/20190417221940_test/home/wwwroot/mavenproject/public/uploads/20190417/udir/20190417221940_test/META-INF/maven/demo.mr/join-brand-age/
+***** ld目录：/home/wwwroot/mavenproject/public/uploads/20190417/udir/20190417221940_test/META-INF/maven/demo.mr/join-brand-age/
+***** excute mvn
