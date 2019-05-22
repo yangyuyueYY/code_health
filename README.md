@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Open Source Component Health Scanning
 
 Target: To develop a scanning tool that can scan the health (optimization, compliance, security) of software open source components.
@@ -34,7 +33,3 @@ Version 1.0  Maven软件包的健康扫描
 4、开发人员能看到组件各版本的使用热度，并推荐最新版本和使用人数最多的最优版本。
 
 漏洞数据库来源：NVD
-
-=======
-# code_health
->>>>>>> 4c313ea87f8c844ef06f29bd9fdb5d501bca320b
