@@ -1,0 +1,17 @@
+1. Install and configure PHP environment: https://www.php.net/manual/zh/install.php
+2. Download and install ThinkPHP framework: PHP version should not be less than 5.4;
+1) Download and install from the official website;
+2) Installation through composer: If composer has not been installed, install composer and configure environment variables. Run the following command to install: composer create-project topthink/think=5.0. * TP5 -- prefer-dist
+3) Install through git: run the following command to install the application project:git clone https://github.com/top-think/think TP5 of ThinkPHP
+3. Download and build Maven environment
+Maven download address：http://maven.apache.org/download.cgi
+
+1、安装配置PHP环境：https://www.php.net/manual/zh/install.php
+
+2、下载安装ThinkPHP框架：PHP版本不得小于5.4；
+1）从官网进行下载安装；
+2）通过composer进行安装：如果还未安装composer，请先安装composer并配置环境变量，运行如下命令，进行安装：composer create-project topthink/think=5.0.* tp5 --prefer-dist
+3）通过git安装：运行如下命令，安装thinkphp的应用项目：git clone https://github.com/top-think/think tp5
+
+3、下载搭建maven环境
+     maven下载地址http://maven.apache.org/download.cgi
